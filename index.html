@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Canvas and SVG</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        .box {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            text-align: center;
+        }
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>HTML5 Canvas & SVG Example</h2>
+
+    <!-- Part 1: Canvas -->
+    <div class="box">
+        <h3>1. HTML5 Canvas</h3>
+        <canvas id="myCanvas" width="280" height="200"></canvas>
+    </div>
+
+    <!-- Part 2: SVG Marwadi University Logo -->
+    <div class="box">
+        <h3>2. Marwadi University SVG Logo</h3>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrPSQiUtvez40JVN7F5BSSWfKs8MV-VOxvbMLs_Q-2-6ys_hr4oXQQzsy6&s=10" width="200">
+        
+
+    </div>
+
+    <!-- Canvas JavaScript Code -->
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // 1. Rectangle
+        ctx.fillStyle = '#00a8cc';
+        ctx.fillRect(20, 20, 100, 60);
+
+        // 2. Circle
+        ctx.beginPath();
+        ctx.arc(200, 50, 30, 0, 2 * Math.PI);
+        ctx.fillStyle = '#ff4d4d';
+        ctx.fill();
+
+        // 3. Line
+        ctx.beginPath();
+        ctx.moveTo(20, 110);
+        ctx.lineTo(260, 110);
+        ctx.strokeStyle = '#2ecc71';
+        ctx.lineWidth = 4;
+        ctx.stroke();
+
+        // 4. Text
+        ctx.font = '18px Arial';
+        ctx.fillStyle = '#333333';
+        ctx.fillText('HTML5 Canvas Text', 20, 150);
+    </script>
+
+</body>
+</html>
